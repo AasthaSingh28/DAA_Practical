@@ -40,8 +40,15 @@ void printArr(int arr[], int n) {
 }
 
 int main() {
-    int arr[] = {11, 2, 3, 1, 2, 3, 4, 6};
-    int n = sizeof(arr) / sizeof(arr[0]);
+     int n;
+    int arr[n];
+    printf("Enter the  number of element:");
+    scanf("%d\n", &n);
+    printf("Enter the value of elements in an array:");
+    for(int i=0; i<n; i++){
+        scanf("%d\n", &arr[i]);
+    }
+    
     int k = 12; // The range of input values (0 to k-1)
     printf("Before sorting array elements are - \n");
     printArr(arr, n);
