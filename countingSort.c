@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Function to perform Counting Sort
 void countSort(int arr[], int n, int k) {
     int output[n];
     int count[k];
@@ -32,6 +33,7 @@ void countSort(int arr[], int n, int k) {
     }
 }
 
+// Function to print the array
 void printArr(int arr[], int n) {
     for (int i = 0; i < n; ++i) {
         printf("%d ", arr[i]);
@@ -40,15 +42,17 @@ void printArr(int arr[], int n) {
 }
 
 int main() {
-     int n;
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    // Declare arr after initializing n
     int arr[n];
-    printf("Enter the  number of element:");
-    scanf("%d\n", &n);
-    printf("Enter the value of elements in an array:");
-    for(int i=0; i<n; i++){
-        scanf("%d\n", &arr[i]);
+    printf("Enter the values of elements in an array: ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
     }
-    
+
     int k = 12; // The range of input values (0 to k-1)
     printf("Before sorting array elements are - \n");
     printArr(arr, n);
