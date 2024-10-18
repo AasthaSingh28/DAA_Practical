@@ -1,9 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // Function to get maximum value in an array
 int getMax(int arr[], int n) {
     int max = arr[0];
-    for ( int i = 1; i < n; i++) {
+    for (int i = 1; i < n; i++) {
         if (arr[i] > max) {
             max = arr[i];
         }
@@ -58,11 +59,27 @@ void printArray(int arr[], int n) {
 
 // Driver code
 int main() {
-    int arr[] = {170, 45, 75, 90, 802, 24, 2, 66};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n); // Corrected format specifier
+
+    // Allocate memory for the array
+    int *arr = (int *)malloc(n * sizeof(int));
+    if (arr == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1; // Exit if memory allocation fails
+    }
+
+    printf("Enter the values of elements in the array: ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]); // Corrected format specifier
+    }
 
     radixSort(arr, n);
     printArray(arr, n);
+
+    // Free allocated memory
+    free(arr);
 
     return 0;
 }
